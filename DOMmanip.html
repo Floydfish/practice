@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM methods</title>
+</head>
+<body>
+    <h1>DOM manipulation using JS</h1>
+    <script type="text/javascript">
+    
+        function addNode(where, type, content, css) {
+            const element = document.createElement(type);
+            const node = document.createTextNode(content);
+            element.appendChild(node);
+
+            document.querySelector(where).appendChild(element);
+            element.style.cssText = css
+        }
+
+        addNode("body", "p", "Hey, I'm red", "color: red")
+        addNode("body", "h3", "I'm a blue h3!", "color: blue")
+        addNode("body", "div", "", "border-style: solid; background-color: pink")
+
+        addNode("div", "h1", "I'm in a div");
+        addNode("div", "p", "ME TOO!")
+
+    </script>
+    
+</body>
+</html>
